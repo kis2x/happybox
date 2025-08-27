@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REPOS: |
-        kubernetes-sigs/kind
+        babarot/gomi
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
