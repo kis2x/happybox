@@ -5,6 +5,9 @@ on:
     - cron: '0 0 * * 0'
   workflow_dispatch:
 
+permissions:
+  contents: write
+  
 jobs:
   dodeps:
     runs-on: ubuntu-latest
@@ -43,7 +46,8 @@ jobs:
             echo "Checking releases for $repo"
 
             # Get latest release tag
-            tag=$(gh api --paginate "repos/$repo/releases" --jq '.[].tag_name' | head -n1)
+            latest_tag=$(gh api "repos/$repo/releases/latest" --jq '.tag_name' 2>/dev/null || echo "")
+            tag=$(echo $latest_tag | sed 's/^v//')
             release_name="${basename}-${tag}"
             tarball="${basename}-${tag}-deps.tar.xz"
             
@@ -55,7 +59,7 @@ jobs:
             
             echo "Processing new release: $tag for $repo"
             # Clone the repo at the latest tag
-            git clone --depth 1 --branch "$tag" "https://github.com/$repo.git" temp_dir
+            git clone --depth 1 --branch "$latest_tag" "https://github.com/$repo.git" temp_dir
             cd temp_dir
 
             # Download deps
