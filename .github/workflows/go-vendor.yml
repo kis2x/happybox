@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REPOS: |
-        pomdtr/sunbeam
-        savedra1/clipse
-        kubernetes/minikube
         kubernetes-sigs/kind
     steps:
       - name: Checkout repository
