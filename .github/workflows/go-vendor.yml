@@ -16,6 +16,7 @@ jobs:
         babarot/gomi
         pomdtr/sunbeam
         savedra1/clipse
+        joshmedeski/sesh
         kubernetes/minikube
         kubernetes-sigs/kind
     steps:
