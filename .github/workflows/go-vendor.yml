@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REPOS: |
-        babarot/gomi
         pomdtr/sunbeam
         savedra1/clipse
         kubernetes/minikube
