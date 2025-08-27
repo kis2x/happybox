@@ -70,7 +70,7 @@ jobs:
             cd temp_dir
 
             # Download deps
-            go mod vendor -o go-mod
+            GOMODCACHE="${PWD}"/go-mod go mod download -modcacherw
 
             # Create tarball
             XZ_OPT='-T0 -9' tar -acf "../$tarball" go-mod/
