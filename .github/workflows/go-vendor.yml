@@ -70,10 +70,10 @@ jobs:
             cd temp_dir
 
             # Download deps
-            go mod vendor
+            go mod vendor -o go-mod
 
             # Create tarball
-            XZ_OPT='-T0 -9' tar -acf "../$tarball" vendor/
+            XZ_OPT='-T0 -9' tar -acf "../$tarball" go-mod/
             cd ..
 
             # Create release
