@@ -22,6 +22,7 @@ jobs:
         kubernetes/minikube
         kubernetes-sigs/kind
         bloznelis/typioca
+        go-task/task
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
