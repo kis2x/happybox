@@ -21,6 +21,7 @@ jobs:
         joshmedeski/sesh
         kubernetes/minikube
         kubernetes-sigs/kind
+        bloznelis/typioca
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
