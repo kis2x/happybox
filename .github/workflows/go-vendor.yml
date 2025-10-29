@@ -23,6 +23,7 @@ jobs:
         kubernetes-sigs/kind
         bloznelis/typioca
         go-task/task
+        xo/usql
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
