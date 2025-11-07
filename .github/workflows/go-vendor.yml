@@ -24,6 +24,7 @@ jobs:
         bloznelis/typioca
         go-task/task
         xo/usql
+        Achno/gowall
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
